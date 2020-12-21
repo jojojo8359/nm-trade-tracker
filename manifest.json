@@ -1,0 +1,29 @@
+{
+	"name": "NeonMob Trade Tracker",
+	"version": "1.0",
+	"description": "Keeps track of any active trades on NeonMob, and shows if cards are in an active trade.",
+	"permissions": ["activeTab", "declarativeContent", "tabs", "storage"],
+	"background": {
+		"scripts": ["background.js"],
+		"persistent": false
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://www.neonmob.com/*"
+			],
+			"js": ["content.js", "mutation.js"],
+			"run_at": "document_end"
+		}
+	],
+	"icons": {
+		"16": "images/favicon.png",
+		"32": "images/favicon.png",
+		"48": "images/favicon.png",
+		"128": "images/favicon.png"
+	},
+	"manifest_version": 2,
+	"web_accessible_resources": [
+		"images/*.png"
+	]
+}
